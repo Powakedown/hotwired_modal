@@ -8,10 +8,20 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.12",
-    "sass": "^1.82.0"
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10.4.20",
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.3.3",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.83.0"
   },
   "scripts": {
-    "build": "esbuild ./app/javascript/application.js",
-    "build:css": "sass ./app/assets/stylesheets/application.sass.scss ./app/assets/builds/application.css --no-source-map"
-  }
+    "build": "esbuild app/javascript/application.js --bundle --outdir=app/assets/builds",
+    "build:css": "sass --load-path=node_modules ./app/assets/stylesheets/application.sass.scss ./app/assets/builds/application.css --no-source-map"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
